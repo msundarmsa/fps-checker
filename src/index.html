@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>FPS Checker</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <script defer src="render.js"></script>
+  </head>
+  <body>
+    <h1 class="title has-text-centered">📷 FPS Checker</h1>
+    <div class="field is-grouped">
+      <p class="control is-expanded">
+        <input id="currDeviceInput" class="input" type="text" placeholder="Device">
+      </p>
+      <p class="control">
+        <button id="checkFPSBtn" class="button is-info">
+          Check FPS
+        </a>
+      </p>
+    </div>
+    <p id="currFPSLbl" class="has-text-centered">Current FPS: --</p>
+  </body>
+</html>
