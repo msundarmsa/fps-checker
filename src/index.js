@@ -11,9 +11,9 @@ if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
-function handleStartCamera(event, device) {
-  console.log(`Starting camera: ${device}`);
-  cameraProcess.send({ cmd: "START_CAMERA", device: device });
+function handleStartCamera(event, device, framework) {
+  console.log(`Starting camera: ${device} with framework: ${framework}`);
+  cameraProcess.send({ cmd: "START_CAMERA", device: device, framework: framework });
 }
 
 function handleStopCamera(event) {

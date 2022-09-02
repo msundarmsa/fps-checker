@@ -32,7 +32,7 @@ NAN_METHOD(VideoCapture::New) {
     self->self.open(self->path);
   }
   else if (info[0]->IsUint32()) {
-    self->self.open(info[0]->ToUint32(Nan::GetCurrentContext()).ToLocalChecked()->Value());
+    self->self.open(info[0]->ToUint32(Nan::GetCurrentContext()).ToLocalChecked()->Value(), info[1]->ToUint32(Nan::GetCurrentContext()).ToLocalChecked()->Value());
   }
   else {
     return tryCatch.throwError("expected arg 0 to be path or device port");

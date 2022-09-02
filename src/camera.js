@@ -18,14 +18,21 @@ process.on('message', (msg) => {
         if (isNumeric(device)) {
             device = parseInt(device);
         }
-        startCamera(device);
+        startCamera(device, msg.framework);
     } else if (msg.cmd == "STOP_CAMERA") {
         video.release();
     }
 });
 
-const startCamera = (device) => {
-    video = new cv.VideoCapture(device);
+const startCamera = (device, framework) => {
+    let fmwk = null;
+    if (framework == 'MSMF') {
+        fmwk = cv.CAP_MSMF;
+    } else {
+        fmwk = cv.CAP_ANY;
+    }
+    console.log(`Framework: ${fmwk}`);
+    video = new cv.VideoCapture(device, fmwk);
 
     let numFrames = 0;
     let startTime = 0;
