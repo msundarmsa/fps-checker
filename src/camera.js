@@ -28,6 +28,12 @@ const startCamera = (device, framework) => {
     let fmwk = null;
     if (framework == 'MSMF') {
         fmwk = cv.CAP_MSMF;
+    } else if (framework == 'FFMPEG') {
+        fmwk = cv.CAP_FFMPEG;
+    } else if (framework == 'AVFoundation') {
+        fmwk = cv.CAP_AVFOUNDATION;
+    } else if (framework == 'DSHOW') {
+        fmwk = cv.CAP_DSHOW;   
     } else {
         fmwk = cv.CAP_ANY;
     }
